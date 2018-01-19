@@ -1,14 +1,17 @@
 import React, {Component} from 'react';
-// import Utils from './Utils.js';
-
-import {BrowserRouter, Route, Switch, NavLink, Redirect} from 'react-router-dom'
-
-const Home = () => {
+// import { Button, Form, FormControl, FormGroup, Col, Checkbox } from
+// 'react-bootstrap';
+import {Redirect} from 'react-router-dom';
+import {signOut} from './actions'
+export const Home = ({successLogin, user}) => {
     return (
-        <div>
-            <h1>Hola Soy el Home</h1>
-        </div>
-    )
+        <div className="App">
+            {!successLogin && <Redirect to="/sign_in"/>
 }
-
-export default Home;
+            <button className='btn btn-secundary' onClick={signOut}>
+                SignOut
+            </button>
+            <Redirect to="/register_sale"/>
+        </div>
+    );
+}

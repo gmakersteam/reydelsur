@@ -1,51 +1,78 @@
-import React, { Component } from 'react';
-import { Button, Form, FormControl, FormGroup, Col, Checkbox } from 'react-bootstrap';
+import React, {Component} from 'react';
+import {Redirect} from 'react-router-dom';
+import {signUp, signOut} from './actions';
+import './css/app.css';
 
-export const SignUp =({myBoard, selected}) => {
-    return(
-        <div>
-  <Form horizontal>
-    <FormGroup controlId="formHorizontalFirst">
-      <Col sm={5}>
-        <FormControl type="text" placeholder="First name" />
-      </Col>
-    </FormGroup>
+export const SignUp = ({successLogin}) => {
+  return (
+    <div className='container'>
+      {successLogin && <Redirect to="/home"/>
+}
+      <button className='btn btn-secundary' onClick={signOut}>
+        SignOut
+      </button>
+      <form
+        className='demoForm'
+        onSubmit=
+        { e => { e.preventDefault(); signUp (this.fullNameRef.value, this.emailRef.value, this.passwordRef.value, this.surveyRef.value) } }>
 
-    <FormGroup controlId="formHorizontalLast">
-      <Col sm={5}>
-        <FormControl type="text" placeholder="Last name" />
-      </Col>
-    </FormGroup>
-    <FormGroup controlId="formHorizontalEmail">
-      <Col sm={5}>
-        <FormControl type="email" placeholder="Email" />
-      </Col>
-    </FormGroup>
-    <FormGroup controlId="formHorizontalPassword">
-      <Col sm={5}>
-        <FormControl type="password" placeholder="Password" />
-      </Col>
-    </FormGroup>
-    <FormGroup controlId="formHorizontalPassword2">
-      <Col sm={5}>
-        <FormControl type="password" placeholder="Confirm password" />
-      </Col>
-    </FormGroup>
-    <FormGroup>
-      <Col smOffset={2} sm={10}>
-        <Button type="submit">
-          Sign Up
-        </Button>
-      </Col>
-    </FormGroup>
-    <FormGroup>
-      <Col smOffset={2} sm={10}>
-        <Button type="button">
-          Sign In
-        </Button>
-      </Col>
-    </FormGroup>
-  </Form>
+        <div className='form-group'>
+          <div className='input-group'>
+            <span className="input-group-addon">
+              <i className="fa fa-key fa-fw lock"></i>
+            </span>
+            <input
+              type="text"
+              className="form-control inputName"
+              placeholder="FullName"
+              ref=
+              {e => this.fullNameRef = e}/>
+          </div>
         </div>
-    )
+        <div className='form-group'>
+          <div className='input-group'>
+            <span className="input-group-addon">
+              <i className="fa fa-key fa-fw lock"></i>
+            </span>
+            <input
+              type="email"
+              className="form-control inputName"
+              placeholder="Email"
+              ref=
+              {e => this.emailRef = e}/>
+          </div>
+        </div>
+        <div className='form-group'>
+          <div className='input-group'>
+            <span className="input-group-addon">
+              <i className="fa fa-key fa-fw lock"></i>
+            </span>
+            <input
+              type="password"
+              className="form-control inputName"
+              placeholder="Password"
+              ref=
+              {e => this.passwordRef = e}/>
+          </div>
+        </div>
+        <div className='form-group'>
+          <div className='input-group'>
+            <span className="input-group-addon">
+              <i className="fa fa-key fa-fw lock"></i>
+            </span>
+            <input
+              type="text"
+              className="form-control inputName"
+              placeholder="survey"
+              ref=
+              {e => this.surveyRef = e}/>
+          </div>
+        </div>
+
+        <button type="submit">
+          Sign Up!
+        </button>
+      </form>
+    </div>
+  )
 }
