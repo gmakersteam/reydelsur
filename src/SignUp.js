@@ -14,7 +14,13 @@ export const SignUp = ({successLogin}) => {
       <form
         className='demoForm'
         onSubmit=
-        { e => { e.preventDefault(); signUp (this.fullNameRef.value, this.emailRef.value, this.passwordRef.value, this.surveyRef.value) } }>
+        { e => { e.preventDefault();
+         signUp (
+           this.fullNameRef.value, 
+           this.emailRef.value, 
+           this.passwordRef.value
+           ) }
+          }>
 
         <div className='form-group'>
           <div className='input-group'>
@@ -53,19 +59,6 @@ export const SignUp = ({successLogin}) => {
               placeholder="Password"
               ref=
               {e => this.passwordRef = e}/>
-          </div>
-        </div>
-        <div className='form-group'>
-          <div className='input-group'>
-            <span className="input-group-addon">
-              <i className="fa fa-key fa-fw lock"></i>
-            </span>
-            <input
-              type="text"
-              className="form-control inputName"
-              placeholder="survey"
-              ref=
-              {e => this.surveyRef = e}/>
           </div>
         </div>
 
