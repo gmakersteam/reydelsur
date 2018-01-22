@@ -12,7 +12,7 @@ import './css/app.css';
 import {SignIn} from './SignIn';
 import {SignUp} from './SignUp';
 
-import Home from './Home';
+import {Home} from './Home';
 
 const App = ({selected, successLogin, user}) => {
     return (

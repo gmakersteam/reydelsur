@@ -1,12 +1,12 @@
-
+import * as firebase from "firebase";
 // Initialize Firebase
 var config = {
-    apiKey: "AIzaSyD3RT9dGPTVDtxeqdBSkJtO8WN3epjrnjE",
-    authDomain: "fir-37152.firebaseapp.com",
-    databaseURL: "https://fir-37152.firebaseio.com",
-    projectId: "fir-37152",
-    storageBucket: "fir-37152.appspot.com",
-    messagingSenderId: "505773939781"
+    apiKey: "AIzaSyAlro3RJLyJ_xIFLqYpDSYfZWpYtLCYniA",
+    authDomain: "reydelsur-c2a0a.firebaseapp.com",
+    databaseURL: "https://reydelsur-c2a0a.firebaseio.com",
+    projectId: "reydelsur-c2a0a",
+    storageBucket: "reydelsur-c2a0a.appspot.com",
+    messagingSenderId: "106583468758"
 };
 firebase.initializeApp(config);
 
