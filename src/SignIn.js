@@ -10,9 +10,9 @@ export const SignIn = ({successLogin, SignUp}) => {
     <div className="containersign">
       {successLogin && <Redirect to="/home"/>
 }
-      <button className='btn btn-secundary' onClick={signOut}>
+      {/* <button className='btn btn-secundary' onClick={signOut}>
         SignOut
-      </button>
+      </button> */}
       <h1>
         ADMIN
       </h1>

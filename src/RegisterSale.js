@@ -3,7 +3,10 @@ import './css/app.css';
 
 export const RegisterSale  = () => {
     return (
-        <div></div>
+        <section>
+            <SellerData />
+            <ClientData />
+        </section>
     )
 }
 const SellerData = () => {
