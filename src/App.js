@@ -9,10 +9,13 @@ import {
     BrowserRouter
 } from 'react-router-dom';
 import './css/app.css';
+import {Home} from './Home';
 import {SignIn} from './SignIn';
 import {SignUp} from './SignUp';
+import {RegisterSale} from './RegisterSale';
+import {RegisterProduct} from './RegisterProduct';
 
-import {Home} from './Home';
+
 
 const App = ({selected, successLogin, user}) => {
     return (
@@ -23,6 +26,8 @@ const App = ({selected, successLogin, user}) => {
                     <Route exact path="/" render={() => <SignIn successLogin={successLogin} SignUp={SignUp} />}/>
                     <Route path="/sign_up" render={() => <SignUp successLogin={successLogin} />}/>
                     <Route path="/sign_in"  render={() => <SignIn successLogin={successLogin} SignUp={SignUp}  />}/>
+                    <Route path="/register_sale"  render={() => <RegisterSale successLogin={successLogin}  />}/>
+                    <Route path="/register_product"  render={() => <RegisterProduct successLogin={successLogin}  />}/>
                     <Route path='/reydelsur' render={() => <Redirect to="/sign_in"/>}/>
                 </Switch>
             </HashRouter>
